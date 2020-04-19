@@ -20,6 +20,22 @@ namespace AlternateLife.RageMP.Net
 
         private IResource _entryPoint;
 
+        private static IReadOnlyList<string> IgnoreAssemblyNames = new[]
+        {
+            //    Microsoft.Extensions.Options, Microsoft.Extensions.ObjectPool, Microsoft.AspNetCore.Session
+            "Microsoft.",
+            
+            //    System.Numerics, System.Net, System.Memory
+            "System.",
+            
+            //    api-ms-win-crt-utility-l1-1-0, api-ms-win-core-heap-l1-1-0
+            "api-ms-",
+            "FiveLife.",
+            
+            //    mscordaccore, mscordbi, mscorrc
+            "msc"
+        };
+        
         public ResourceHandler(Plugin plugin, DirectoryInfo directory, ResourceLoader resourceLoader)
         {
             _plugin = plugin;
@@ -90,6 +106,18 @@ namespace AlternateLife.RageMP.Net
                     {
                         Log(LogLevel.Warn, $"Skipping assembly \"{file.FullName}\", because an error occured during load!");
 
+                        continue;
+                    }
+
+                    if (assembly.IsDynamic || assembly.ReflectionOnly)
+                    {
+                        Log(LogLevel.Warn, $"Skipping assembly \"{file.FullName}\", because assembly is dynamic!");
+                        continue;
+                    }
+
+                    if (IgnoreAssemblyNames.Any(name => assembly.FullName.StartsWith(name)))
+                    {
+                        Log(LogLevel.Warn, $"Skipping assembly \"{file.FullName}\", assembly in ignore list");
                         continue;
                     }
 
