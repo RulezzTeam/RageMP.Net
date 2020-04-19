@@ -31,58 +31,5 @@ namespace AlternateLife.RageMP.Net.Scripting
         {
             _plugin = plugin;
         }
-
-        /// <summary>
-        /// Converts given string to the equivalent Jenkins-One-At-A-Time value.
-        ///
-        /// https://en.wikipedia.org/wiki/Jenkins_hash_function#one_at_a_time
-        /// </summary>
-        /// <param name="data">text to convert</param>
-        /// <returns>Integer that represents given string data</returns>
-        [Obsolete("Use MP.Utility.Jooat(string data) instead")]
-        public static uint Joaat(string data)
-        {
-            return _plugin.Utility.Joaat(data);
-        }
-
-        /// <summary>
-        /// Converts given collection of strings to Jenkins-One-At-A-Time values.
-        ///
-        /// https://en.wikipedia.org/wiki/Jenkins_hash_function#one_at_a_time
-        /// </summary>
-        /// <param name="input">texts to convert</param>
-        /// <returns>Collection of converted values</returns>
-        [Obsolete("Use MP.Utility.Jooat(IList<string> input) instead")]
-        public static IList<uint> Joaat(IList<string> input)
-        {
-            return _plugin.Utility.Joaat(input);
-        }
-
-        /// <summary>
-        /// Schedules given <see cref="Action"/> in RageMP's main thread.
-        ///
-        /// WARNING: Avoid long procedures, because this could harm general event performance.
-        /// </summary>
-        /// <param name="action"><paramref name="action"/> to schedule</param>
-        /// <param name="forceSchedule">If true, main thread check will be ignored and action will be scheduled</param>
-        [Obsolete("Use MP.Utility.Schedule(Action action, bool forceSchedule = false) instead")]
-        public static Task Schedule(Action action, bool forceSchedule = false)
-        {
-            return _plugin.Utility.Schedule(action, forceSchedule);
-        }
-
-        /// <summary>
-        /// Schedules given <see cref="Func{TResult}"/> in RageMP's main thread.
-        ///
-        /// WARNING: Avoid long procedures, because this could harm general event performance.
-        /// </summary>
-        /// <param name="action"><paramref name="action"/> to schedule</param>
-        /// <param name="forceSchedule">If true, main thread check will be ignored and action will be scheduled</param>
-        [Obsolete("Use MP.Utility.Schedule<T>(Func<T> action, bool forceSchedule = false) instead")]
-        public static Task<T> Schedule<T>(Func<T> action, bool forceSchedule = false)
-        {
-            return _plugin.Utility.Schedule(action, forceSchedule);
-        }
-
     }
 }
