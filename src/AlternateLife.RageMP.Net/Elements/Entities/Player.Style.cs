@@ -17,23 +17,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             base.SetModel((uint) value);
         }
 
-        public Task SetModelAsync(PedHash value)
-        {
-            return base.SetModelAsync((uint) value);
-        }
-
         public new PedHash GetModel()
         {
             CheckExistence();
 
             return (PedHash) base.GetModel();
-        }
-
-        public new async Task<PedHash> GetModelAsync()
-        {
-            CheckExistence();
-
-            return (PedHash) await base.GetModelAsync().ConfigureAwait(false);
         }
 
         public void SetEyeColor(uint value)
@@ -43,21 +31,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.Player.Player_SetEyeColor(NativePointer, value);
         }
 
-        public Task SetEyeColorAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetEyeColor(value));
-        }
-
         public uint GetEyeColor()
         {
             CheckExistence();
 
             return Rage.Player.Player_GetEyeColor(NativePointer);
-        }
-
-        public Task<uint> GetEyeColorAsync()
-        {
-            return _plugin.Schedule(GetEyeColor);
         }
 
         public uint GetHairColor()
@@ -66,12 +44,7 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 
             return Rage.Player.Player_GetHairColor(NativePointer);
         }
-
-        public Task<uint> GetHairColorAsync()
-        {
-            return _plugin.Schedule(GetHairColor);
-        }
-
+        
         public uint GetHairHighlightColor()
         {
             CheckExistence();

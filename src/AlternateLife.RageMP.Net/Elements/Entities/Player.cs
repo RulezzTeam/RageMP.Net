@@ -31,11 +31,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             }
         }
 
-        public Task SetNameAsync(string value)
-        {
-            return _plugin.Schedule(() => SetName(value));
-        }
-
         public string GetName()
         {
             CheckExistence();
@@ -43,11 +38,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             var namePointer = Rage.Player.Player_GetName(NativePointer);
 
             return StringConverter.PointerToString(namePointer);
-        }
-
-        public Task<string> GetNameAsync()
-        {
-            return _plugin.Schedule(GetName);
         }
 
         public string GetSocialClubName()
@@ -59,21 +49,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return StringConverter.PointerToString(socialClubNamePointer);
         }
 
-        public Task<string> GetSocialClubNameAsync()
-        {
-            return _plugin.Schedule(GetSocialClubName);
-        }
-
         public void SetHeading(float value)
         {
             CheckExistence();
 
             Rage.Player.Player_SetHeading(NativePointer, value);
-        }
-
-        public Task SetHeadingAsync(float value)
-        {
-            return _plugin.Schedule(() => SetHeading(value));
         }
 
         public float GetHeading()
@@ -92,12 +72,7 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
         {
             SetHeading(value.Z);
         }
-
-        public override Task SetRotationAsync(Vector3 value)
-        {
-            return SetHeadingAsync(value.Z);
-        }
-
+        
         public override Vector3 GetRotation()
         {
             CheckExistence();
