@@ -22,7 +22,6 @@ namespace AlternateLife.RageMP.Net.Scripting
         public static ITextLabelPool TextLabels => _plugin.TextLabelPool;
         public static IConfig Config => _plugin.Config;
         public static IWorld World => _plugin.World;
-        public static ICommands Commands => _plugin.Commands;
         public static IUtility Utility => _plugin.Utility;
 
         public static ILogger Logger => _plugin.Logger;

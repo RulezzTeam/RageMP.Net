@@ -35,7 +35,6 @@ namespace AlternateLife.RageMP.Net
         internal TextLabelPool TextLabelPool { get; }
         internal Config Config { get; }
         internal World World { get; }
-        internal Commands Commands { get; }
         internal Utility Utility { get; }
 
         internal Logger Logger { get; }
@@ -55,7 +54,6 @@ namespace AlternateLife.RageMP.Net
 
             Logger = new Logger(this);
             EventScripting = new EventScripting(this);
-            Commands = new Commands(this);
             Utility = new Utility(this);
 
             PlayerPool = CreateNativeManager<PlayerPool>(Rage.Multiplayer.Multiplayer_GetPlayerPool);

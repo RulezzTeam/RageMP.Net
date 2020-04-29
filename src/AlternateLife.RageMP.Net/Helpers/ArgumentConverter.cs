@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 using AlternateLife.RageMP.Net.Data;
 using AlternateLife.RageMP.Net.Enums;
 using AlternateLife.RageMP.Net.Interfaces;
-using Newtonsoft.Json;
 
 namespace AlternateLife.RageMP.Net.Helpers
 {
     internal class ArgumentConverter
     {
         private readonly Plugin _plugin;
+        private static JsonSerializerOptions SerializerOptions { get; } = new JsonSerializerOptions
+        {
+            IgnoreNullValues = true,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+#if DEBUG
+            WriteIndented = true
+#endif
+        }; 
 
         public ArgumentConverter(Plugin plugin)
         {
@@ -105,9 +113,11 @@ namespace AlternateLife.RageMP.Net.Helpers
                         break;
                     }
 
+                    var json = JsonSerializer.Serialize(element);
                     return new ArgumentData
                     {
-                        StringValue = StringConverter.StringToPointerUnsafe(JsonConvert.SerializeObject(element)),
+                        
+                        StringValue = StringConverter.StringToPointerUnsafe(json),
                         ValueType = (byte) ArgumentValueType.Object
                     };
                 }

@@ -30,20 +30,11 @@ namespace AlternateLife.RageMP.Net.Elements.Pools
             }
         }
 
-        public Task<ITextLabel> NewAsync(Vector3 position, string text, uint font, Color color, float drawDistance, bool los, uint dimension)
-        {
-            return _plugin.Schedule(() => New(position, text, font, color, drawDistance, los, dimension));
-        }
-
         public ITextLabel New(Vector3 position, string text, int font, Color color, float drawDistance, bool los, uint dimension)
         {
             return New(position, text, (uint) font, color, drawDistance, los, dimension);
         }
 
-        public Task<ITextLabel> NewAsync(Vector3 position, string text, int font, Color color, float drawDistance, bool los, uint dimension)
-        {
-            return NewAsync(position, text, (uint) font, color, drawDistance, los, dimension);
-        }
 
         protected override ITextLabel BuildEntity(IntPtr entityPointer)
         {

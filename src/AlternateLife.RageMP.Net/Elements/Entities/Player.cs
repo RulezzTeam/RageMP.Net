@@ -87,21 +87,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return new Vector3(0, 0, GetHeading());
         }
 
-        public override Task<Vector3> GetRotationAsync()
-        {
-            return _plugin.Schedule(GetRotation);
-        }
-
         public float GetMoveSpeed()
         {
             CheckExistence();
 
             return Rage.Player.Player_GetMoveSpeed(NativePointer);
-        }
-
-        public Task<float> GetMoveSpeedAsync()
-        {
-            return _plugin.Schedule(GetMoveSpeed);
         }
 
         public void SetHealth(float value)
@@ -111,21 +101,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.Player.Player_SetHealth(NativePointer, value);
         }
 
-        public Task SetHealthAsync(float value)
-        {
-            return _plugin.Schedule(() => SetHealth(value));
-        }
-
         public float GetHealth()
         {
             CheckExistence();
 
             return Rage.Player.Player_GetHealth(NativePointer);
-        }
-
-        public Task<float> GetHealthAsync()
-        {
-            return _plugin.Schedule(GetHealth);
         }
 
         public void SetArmor(float value)
@@ -135,21 +115,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.Player.Player_SetArmor(NativePointer, value);
         }
 
-        public Task SetArmorAsync(float value)
-        {
-            return _plugin.Schedule(() => SetArmor(value));
-        }
-
         public float GetArmor()
         {
             CheckExistence();
 
             return Rage.Player.Player_GetArmor(NativePointer);
-        }
-
-        public Task<float> GetArmorAsync()
-        {
-            return _plugin.Schedule(GetArmor);
         }
 
         public Vector3 GetAimingAt()
@@ -160,12 +130,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 
             return StructConverter.PointerToStruct<Vector3>(aimingAtPointer);
         }
-
-        public Task<Vector3> GetAimingAtAsync()
-        {
-            return _plugin.Schedule(GetAimingAt);
-        }
-
         public string GetIp()
         {
             CheckExistence();
@@ -175,33 +139,17 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return StringConverter.PointerToString(ipPointer);
         }
 
-        public Task<string> GetIpAsync()
-        {
-            return _plugin.Schedule(GetIp);
-        }
-
         public int GetPing()
         {
             CheckExistence();
 
             return Rage.Player.Player_GetPing(NativePointer);
         }
-
-        public Task<int> GetPingAsync()
-        {
-            return _plugin.Schedule(GetPing);
-        }
-
         public float GetPacketLoss()
         {
             CheckExistence();
 
             return Rage.Player.Player_GetPacketLoss(NativePointer);
-        }
-
-        public Task<float> GetPacketLossAsync()
-        {
-            return _plugin.Schedule(GetPacketLoss);
         }
 
         public string GetKickReason()
@@ -213,21 +161,12 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return StringConverter.PointerToString(kickReasonPointer);
         }
 
-        public Task<string> GetKickReasonAsync()
-        {
-            return _plugin.Schedule(GetKickReason);
-        }
 
         public bool IsJumping()
         {
             CheckExistence();
 
             return Rage.Player.Player_IsJumping(NativePointer);
-        }
-
-        public Task<bool> IsJumpingAsync()
-        {
-            return _plugin.Schedule(IsJumping);
         }
 
         public bool IsInCover()
@@ -249,10 +188,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return Rage.Player.Player_IsEnteringVehicle(NativePointer);
         }
 
-        public Task<bool> IsEnteringVehicleAsync()
-        {
-            return _plugin.Schedule(IsEnteringVehicle);
-        }
 
         public bool IsLeavingVehicle()
         {
@@ -260,12 +195,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 
             return Rage.Player.Player_IsLeavingVehicle(NativePointer);
         }
-
-        public Task<bool> IsLeavingVehicleAsync()
-        {
-            return _plugin.Schedule(IsLeavingVehicle);
-        }
-
         public bool IsClimbing()
         {
             CheckExistence();
@@ -381,11 +310,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
                 var textPointer = converter.StringToPointer(text);
                 Rage.Player.Player_OutputChatBox(NativePointer, textPointer);
             }
-        }
-
-        public Task OutputChatBoxAsync(string text)
-        {
-            return _plugin.Schedule(() => OutputChatBox(text));
         }
 
         public void Notify(string text)

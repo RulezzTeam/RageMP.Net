@@ -23,29 +23,15 @@ namespace AlternateLife.RageMP.Net.Elements.Pools
             return CreateAndSaveEntity(pointer);
         }
 
-        public Task<IMarker> NewAsync(MarkerType type, Vector3 position, Vector3 rotation, Vector3 direction, float scale, Color color, bool visible, uint dimension)
-        {
-            return _plugin.Schedule(() => New(type, position, rotation, direction, scale, color, visible, dimension));
-        }
-
         public IMarker New(uint type, Vector3 position, Vector3 rotation, Vector3 direction, float scale, Color color, bool visible, uint dimension)
         {
             return New((MarkerType) type, position, rotation, direction, scale, color, visible, dimension);
         }
 
-        public Task<IMarker> NewAsync(uint type, Vector3 position, Vector3 rotation, Vector3 direction, float scale, Color color, bool visible, uint dimension)
-        {
-            return NewAsync((MarkerType) type, position, rotation, direction, scale, color, visible, dimension);
-        }
 
         public IMarker New(int type, Vector3 position, Vector3 rotation, Vector3 direction, float scale, Color color, bool visible, uint dimension)
         {
             return New((MarkerType) type, position, rotation, direction, scale, color, visible, dimension);
-        }
-
-        public Task<IMarker> NewAsync(int type, Vector3 position, Vector3 rotation, Vector3 direction, float scale, Color color, bool visible, uint dimension)
-        {
-            return NewAsync((MarkerType) type, position, rotation, direction, scale, color, visible, dimension);
         }
 
         protected override IMarker BuildEntity(IntPtr entityPointer)

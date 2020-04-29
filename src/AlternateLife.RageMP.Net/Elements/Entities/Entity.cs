@@ -41,21 +41,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.Entity.Entity_SetModel(NativePointer, value);
         }
 
-        public Task SetModelAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetModel(value));
-        }
-
         public uint GetModel()
         {
             CheckExistence();
 
             return Rage.Entity.Entity_GetModel(NativePointer);
-        }
-
-        public Task<uint> GetModelAsync()
-        {
-            return _plugin.Schedule(GetModel);
         }
 
         public void SetAlpha(uint value)
@@ -65,11 +55,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.Entity.Entity_SetAlpha(NativePointer, value);
         }
 
-        public Task SetAlphaAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetAlpha(value));
-        }
-
         public uint GetAlpha()
         {
             CheckExistence();
@@ -77,21 +62,12 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return Rage.Entity.Entity_GetAlpha(NativePointer);
         }
 
-        public Task<uint> GetAlphaAsync()
-        {
-            return _plugin.Schedule(GetAlpha);
-        }
 
         public void SetDimension(uint value)
         {
             CheckExistence();
 
             Rage.Entity.Entity_SetDimension(NativePointer, value);
-        }
-
-        public Task SetDimensionAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetDimension(value));
         }
 
         public uint GetDimension()
@@ -101,21 +77,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return Rage.Entity.Entity_GetDimension(NativePointer);
         }
 
-        public Task<uint> GetDimensionAsync()
-        {
-            return _plugin.Schedule(GetDimension);
-        }
-
         public void SetPosition(Vector3 value)
         {
             CheckExistence();
 
             Rage.Entity.Entity_SetPosition(NativePointer, value);
-        }
-
-        public Task SetPositionAsync(Vector3 value)
-        {
-            return _plugin.Schedule(() => SetPosition(value));
         }
 
         public Vector3 GetPosition()
@@ -125,23 +91,12 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return StructConverter.PointerToStruct<Vector3>(Rage.Entity.Entity_GetPosition(NativePointer));
         }
 
-        public Task<Vector3> GetPositionAsync()
-        {
-            return _plugin.Schedule(GetPosition);
-        }
-
         public virtual void SetRotation(Vector3 value)
         {
             CheckExistence();
 
             Rage.Entity.Entity_SetRotation(NativePointer, value);
         }
-
-        public virtual Task SetRotationAsync(Vector3 value)
-        {
-            return _plugin.Schedule(() => SetRotation(value));
-        }
-
         public virtual Vector3 GetRotation()
         {
             CheckExistence();
@@ -149,19 +104,9 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return StructConverter.PointerToStruct<Vector3>(Rage.Entity.Entity_GetRotation(NativePointer));
         }
 
-        public virtual Task<Vector3> GetRotationAsync()
-        {
-            return _plugin.Schedule(GetRotation);
-        }
-
         public Vector3 GetVelocity()
         {
             return StructConverter.PointerToStruct<Vector3>(Rage.Entity.Entity_GetVelocity(NativePointer));
-        }
-
-        public Task<Vector3> GetVelocityAsync()
-        {
-            return _plugin.Schedule(GetVelocity);
         }
 
         public void Destroy()
@@ -169,11 +114,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             CheckExistence();
 
             Rage.Entity.Entity_Destroy(NativePointer);
-        }
-
-        public Task DestroyAsync()
-        {
-            return _plugin.Schedule(Destroy);
         }
 
         public bool TryGetSharedData(string key, out object data)

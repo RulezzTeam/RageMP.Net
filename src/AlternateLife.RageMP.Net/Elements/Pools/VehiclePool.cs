@@ -29,29 +29,14 @@ namespace AlternateLife.RageMP.Net.Elements.Pools
             }
         }
 
-        public Task<IVehicle> NewAsync(VehicleHash model, Vector3 position, float heading, string numberPlate, uint alpha, bool locked, bool engine, uint dimension)
-        {
-            return _plugin.Schedule(() => New(model, position, heading, numberPlate, alpha, locked, engine, dimension));
-        }
-
         public IVehicle New(uint model, Vector3 position, float heading, string numberPlate, uint alpha, bool locked, bool engine, uint dimension)
         {
             return New((VehicleHash) model, position, heading, numberPlate, alpha, locked, engine, dimension);
         }
 
-        public Task<IVehicle> NewAsync(uint model, Vector3 position, float heading, string numberPlate, uint alpha, bool locked, bool engine, uint dimension)
-        {
-            return NewAsync((VehicleHash) model, position, heading, numberPlate, alpha, locked, engine, dimension);
-        }
-
         public IVehicle New(int model, Vector3 position, float heading, string numberPlate, int alpha, bool locked, bool engine, uint dimension)
         {
             return New((VehicleHash) model, position, heading, numberPlate, (uint) alpha, locked, engine, dimension);
-        }
-
-        public Task<IVehicle> NewAsync(int model, Vector3 position, float heading, string numberPlate, int alpha, bool locked, bool engine, uint dimension)
-        {
-            return NewAsync((VehicleHash) model, position, heading, numberPlate, (uint) alpha, locked, engine, dimension);
         }
 
         protected override IVehicle BuildEntity(IntPtr entityPointer)

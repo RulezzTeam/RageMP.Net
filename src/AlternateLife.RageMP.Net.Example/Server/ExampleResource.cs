@@ -15,8 +15,6 @@ namespace AlternateLife.RageMP.Net.Example
 
             MP.Events.PlayerDeath += OnPlayerDeath;
             MP.Events.PlayerCommandFailed += OnPlayerCommandFailed;
-
-            MP.Commands.RegisterHandler(new CommandHandler());
         }
 
         public Task OnStartAsync()

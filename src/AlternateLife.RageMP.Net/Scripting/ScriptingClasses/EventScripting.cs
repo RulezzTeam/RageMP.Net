@@ -366,9 +366,7 @@ namespace AlternateLife.RageMP.Net.Scripting.ScriptingClasses
             {
                 return;
             }
-
-            await Task.Run(() => _plugin.Commands.ExecuteCommand(player, message))
-                .ConfigureAwait(false);
+            
         }
 
         internal void DispatchPlayerCommandFailed(IPlayer player, string input, CommandError error, string errorMessage)

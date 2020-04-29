@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
         <RootNamespace>RageMP.Net</RootNamespace>
         <Configurations>Debug;Release;Testing;Linux</Configurations>
         <Platforms>AnyCPU</Platforms>
@@ -14,6 +14,7 @@
         <RepositoryUrl>https://github.com/AlternateLife/RageMP.Net/</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>ragemp gta bridge</PackageTags>
+        <LangVersion>8</LangVersion>
         <OutputType>Exe</OutputType>
     </PropertyGroup>
 
@@ -32,7 +33,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
       <PackageReference Include="NLog" Version="4.6.3" />
     </ItemGroup>
 
