@@ -18,7 +18,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="visible">Visible state of the checkpoint</param>
         /// <param name="dimension">Dimension of the checkpoint</param>
         /// <returns>New <see cref="ICheckpoint" /> instance</returns>
-        ICheckpoint New(uint type, Vector3 position, Vector3 nextPosition, float radius, Color color, bool visible = true, uint dimension = MP.GlobalDimension);
+        ICheckpoint New(uint type, Vector3 position, Vector3 nextPosition, float radius, Color color, bool visible = true, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new checkpoint.
@@ -31,6 +31,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="visible">Visible state of the checkpoint</param>
         /// <param name="dimension">Dimension of the checkpoint</param>
         /// <returns>New <see cref="ICheckpoint" /> instance</returns>
-        ICheckpoint New(int type, Vector3 position, Vector3 nextPosition, float radius, Color color, bool visible = true, uint dimension = MP.GlobalDimension);
+        ICheckpoint New(int type, Vector3 position, Vector3 nextPosition, float radius, Color color, bool visible = true, uint dimension = RageMpConsts.GlobalDimension);
    }
 }

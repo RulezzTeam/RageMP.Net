@@ -7,7 +7,7 @@ using AlternateLife.RageMP.Net.Interfaces;
 
 namespace AlternateLife.RageMP.Net.Scripting.ScriptingClasses
 {
-    internal class Utility : IUtility
+    internal class Utility : IRageMpUtility
     {
         private readonly Plugin _plugin;
 

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace AlternateLife.RageMP.Net.Interfaces
 {
-    public interface IUtility
+    public interface IRageMpUtility
     {
         /// <summary>
         /// Converts given string to the equivalent Jenkins-One-At-A-Time value.

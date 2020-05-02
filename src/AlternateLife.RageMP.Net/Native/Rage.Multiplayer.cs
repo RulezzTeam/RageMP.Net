@@ -1,10 +1,12 @@
 using System;
 using System.Runtime.InteropServices;
+using System.Security;
 
 namespace AlternateLife.RageMP.Net.Native
 {
     internal static partial class Rage
     {
+        [SuppressUnmanagedCodeSecurity]
         internal static class Multiplayer
         {
             [DllImport(_dllName, CallingConvention = _callingConvention)]

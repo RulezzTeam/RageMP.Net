@@ -35,7 +35,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="range">Range to search entities in</param>
         /// <param name="dimension">Dimension to search entities in</param>
         /// <returns>List of found <see typeparamref="T" /></returns>
-        Task<IReadOnlyCollection<T>> GetInRangeAsync(Vector3 position, float range, uint dimension = MP.GlobalDimension);
+        Task<IReadOnlyCollection<T>> GetInRangeAsync(Vector3 position, float range, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Get a list of entities in given dimension.

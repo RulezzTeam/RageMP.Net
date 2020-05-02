@@ -19,25 +19,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         Quaternion GetQuaternion();
 
         /// <summary>
-        /// Get the quaternion rotation of the vehicle.
-        /// </summary>
-        /// <returns>Quaternion rotation of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<Quaternion> GetQuaternionAsync();
-
-        /// <summary>
         /// Get the heading of the vehicle.
         /// </summary>
         /// <returns>Heading of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         float GetHeading();
-
-        /// <summary>
-        /// Get the heading of the vehicle.
-        /// </summary>
-        /// <returns>Heading of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<float> GetHeadingAsync();
 
         /// <summary>
         /// Get the movable state of the vehicle.
@@ -47,25 +33,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         float GetMovableState();
 
         /// <summary>
-        /// Get the movable state of the vehicle.
-        /// </summary>
-        /// <returns>Movable state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<float> GetMovableStateAsync();
-
-        /// <summary>
         /// Get the trailer instance of the vehicle.
         /// </summary>
         /// <returns>Trailer of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         IVehicle GetTrailer();
-
-        /// <summary>
-        /// Get the trailer instance of the vehicle.
-        /// </summary>
-        /// <returns>Trailer of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<IVehicle> GetTrailerAsync();
 
         /// <summary>
         /// Get the trailered by instance of the vehicle.
@@ -75,25 +47,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         IVehicle GetTraileredBy();
 
         /// <summary>
-        /// Get the trailered by instance of the vehicle.
-        /// </summary>
-        /// <returns>Trailered vehicle of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<IVehicle> GetTraileredByAsync();
-
-        /// <summary>
         /// Set the siren state of the vehicle.
         /// </summary>
         /// <param name="active">New siren state of the vehicle</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void SetSirenActive(bool active);
-
-        /// <summary>
-        /// Set the siren state of the vehicle.
-        /// </summary>
-        /// <param name="active">New siren state of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetSirenActiveAsync(bool active);
 
         /// <summary>
         /// Get the siren state of the vehicle.
@@ -103,25 +61,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         bool IsSirenActive();
 
         /// <summary>
-        /// Get the siren state of the vehicle.
-        /// </summary>
-        /// <returns>Siren state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsSirenActiveAsync();
-
-        /// <summary>
         /// Get the horn state of the vehicle.
         /// </summary>
         /// <returns>Horn state of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool IsHornActive();
-
-        /// <summary>
-        /// Get the horn state of the vehicle.
-        /// </summary>
-        /// <returns>Horn state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsHornActiveAsync();
 
         /// <summary>
         /// Set the highbeams state of the vehicle.
@@ -131,23 +75,10 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetHighbeamsActive(bool active);
 
         /// <summary>
-        /// Set the highbeams state of the vehicle.
-        /// </summary>
-        /// <param name="active">New highbeams state of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetHighbeamsActiveAsync(bool active);
-
-        /// <summary>
         /// Get the highbeams state of the vehicle.
         /// </summary>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool AreHighbeamsActive();
-
-        /// <summary>
-        /// Get the highbeams state of the vehicle.
-        /// </summary>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> AreHighbeamsActiveAsync();
 
         /// <summary>
         /// Set the lights state of the vehicle.
@@ -157,25 +88,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetLightsActive(bool active);
 
         /// <summary>
-        /// Set the lights state of the vehicle.
-        /// </summary>
-        /// <param name="active">New lights state of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetLightsActiveAsync(bool active);
-
-        /// <summary>
         /// Get the lights state of the vehicle.
         /// </summary>
         /// <returns>Lights state of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool AreLightsActive();
-
-        /// <summary>
-        /// Get the lights state of the vehicle.
-        /// </summary>
-        /// <returns>Lights state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> AreLightsActiveAsync();
 
         /// <summary>
         /// Set the taxi lights state of the vehicle.
@@ -185,25 +102,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetTaxiLightsActive(bool active);
 
         /// <summary>
-        /// Set the taxi lights state of the vehicle.
-        /// </summary>
-        /// <param name="active">New taxi lights state of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetTaxiLightsActiveAsync(bool active);
-
-        /// <summary>
         /// Get the taxi lights state of the vehicle.
         /// </summary>
         /// <returns>Taxi lights state of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool AreTaxiLightsActive();
-
-        /// <summary>
-        /// Get the taxi lights state of the vehicle.
-        /// </summary>
-        /// <returns>Taxi lights state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> AreTaxiLightsActiveAsync();
 
         /// <summary>
         /// Set the engine state of the vehicle.
@@ -213,25 +116,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetEngineActive(bool active);
 
         /// <summary>
-        /// Set the engine state of the vehicle.
-        /// </summary>
-        /// <returns>New engine state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetEngineActiveAsync(bool active);
-
-        /// <summary>
         /// Get the engine state of the vehicle.
         /// </summary>
         /// <returns>Engine state of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool IsEngineActive();
-
-        /// <summary>
-        /// Get the engine state of the vehicle.
-        /// </summary>
-        /// <returns>Engine state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsEngineActiveAsync();
 
         /// <summary>
         /// Get the rocket boost state of the vehicle.
@@ -241,25 +130,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         bool IsRocketBoostActive();
 
         /// <summary>
-        /// Get the rocket boost state of the vehicle.
-        /// </summary>
-        /// <returns>Rocket boost state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsRocketBoostActiveAsync();
-
-        /// <summary>
         /// Get the break state of the vehicle.
         /// </summary>
         /// <returns>Break state of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool IsBreakActive();
-
-        /// <summary>
-        /// Get the break state of the vehicle.
-        /// </summary>
-        /// <returns>Break state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsBreakActiveAsync();
 
         /// <summary>
         /// Set the neons state of the vehicle.
@@ -269,25 +144,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetNeonsActive(bool active);
 
         /// <summary>
-        /// Set the neons state of the vehicle.
-        /// </summary>
-        /// <param name="active">New neons state of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetNeonsActiveAsync(bool active);
-
-        /// <summary>
         /// Get or set the neons state of the vehicle.
         /// </summary>
         /// <returns>Neons state of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool AreNeonsActive();
-
-        /// <summary>
-        /// Get or set the neons state of the vehicle.
-        /// </summary>
-        /// <returns>Neons state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> AreNeonsActiveAsync();
 
         /// <summary>
         /// Set the lock state of the vehicle.
@@ -297,25 +158,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetLocked(bool locked);
 
         /// <summary>
-        /// Set the lock state of the vehicle.
-        /// </summary>
-        /// <param name="locked">New lock state of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetLockedAsync(bool locked);
-
-        /// <summary>
         /// Get the lock state of the vehicle.
         /// </summary>
         /// <returns>Lock state of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool IsLocked();
-
-        /// <summary>
-        /// Get the lock state of the vehicle.
-        /// </summary>
-        /// <returns>Lock state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsLockedAsync();
 
         /// <summary>
         /// Get if the vehicle is dead.
@@ -325,25 +172,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         bool IsDead();
 
         /// <summary>
-        /// Get if the vehicle is dead.
-        /// </summary>
-        /// <returns>True if the vehicle is dead, otherwise false</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsDeadAsync();
-
-        /// <summary>
         /// Get the steering angle of the vehicle.
         /// </summary>
         /// <returns>Steering angle of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         float GetSteerAngle();
-
-        /// <summary>
-        /// Get the steering angle of the vehicle.
-        /// </summary>
-        /// <returns>Steering angle of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<float> GetSteerAngleAsync();
 
         /// <summary>
         /// Get the gas pedal state of the vehicle.
@@ -353,25 +186,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         float GetGasPedalState();
 
         /// <summary>
-        /// Get the gas pedal state of the vehicle.
-        /// </summary>
-        /// <returns>Gas pedal state of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<float> GetGasPedalStateAsync();
-
-        /// <summary>
         /// Get the engine health of the vehicle.
         /// </summary>
         /// <returns>Engine health of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         float GetEngineHealth();
-
-        /// <summary>
-        /// Get the engine health of the vehicle.
-        /// </summary>
-        /// <returns>Engine health of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<float> GetEngineHealthAsync();
 
         /// <summary>
         /// Get the body health of the vehicle.
@@ -381,25 +200,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         float GetBodyHealth();
 
         /// <summary>
-        /// Get the body health of the vehicle.
-        /// </summary>
-        /// <returns>Body health of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<float> GetBodyHealthAsync();
-
-        /// <summary>
         /// Get the material type of the vehicle.
         /// </summary>
         /// <returns>Material type of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         MaterialType GetMaterialType();
-
-        /// <summary>
-        /// Get the material type of the vehicle.
-        /// </summary>
-        /// <returns>Material type of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<MaterialType> GetMaterialTypeAsync();
 
         /// <summary>
         /// Set the neons color of the vehicle.
@@ -409,25 +214,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetNeonsColor(Color color);
 
         /// <summary>
-        /// Set the neons color of the vehicle.
-        /// </summary>
-        /// <param name="color">New neons color of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetNeonsColorAsync(Color color);
-
-        /// <summary>
         /// Get the neons color of the vehicle.
         /// </summary>
         /// <returns>Neons color of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         Color GetNeonsColor();
-
-        /// <summary>
-        /// Get the neons color of the vehicle.
-        /// </summary>
-        /// <returns>Neons color of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<Color> GetNeonsColorAsync();
 
         /// <summary>
         /// Set the number plate of the vehicle.
@@ -438,24 +229,10 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetNumberPlate(string numberPlate);
 
         /// <summary>
-        /// Set the number plate of the vehicle.
-        /// </summary>
-        /// <param name="numberPlate">New number plate of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        /// <exception cref="ArgumentNullException"><paramref name="value"/> is null</exception>
-        Task SetNumberPlateAsync(string numberPlate);
-
-        /// <summary>
         /// Get the number plate of the vehicle.
         /// </summary>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         string GetNumberPlate();
-
-        /// <summary>
-        /// Get the number plate of the vehicle.
-        /// </summary>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<string> GetNumberPlateAsync();
 
         /// <summary>
         /// Set the livery of the vehicle.
@@ -465,25 +242,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetLivery(uint livery);
 
         /// <summary>
-        /// Set the livery of the vehicle.
-        /// </summary>
-        /// <param name="livery">Livery of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetLiveryAsync(uint livery);
-
-        /// <summary>
         /// Get the livery of the vehicle.
         /// </summary>
         /// <returns>Livery of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         uint GetLivery();
-
-        /// <summary>
-        /// Get the livery of the vehicle.
-        /// </summary>
-        /// <returns>Livery of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetLiveryAsync();
 
         /// <summary>
         /// Set the wheel color of the vehicle.
@@ -493,13 +256,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetWheelColor(uint color);
 
         /// <summary>
-        /// Set the wheel color of the vehicle.
-        /// </summary>
-        /// <param name="color">New wheel color of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetWheelColorAsync(uint color);
-
-        /// <summary>
         /// Get the wheel color of the vehicle.
         /// </summary>
         /// <returns>Wheel color of the vehicle</returns>
@@ -507,67 +263,32 @@ namespace AlternateLife.RageMP.Net.Interfaces
         uint GetWheelColor();
 
         /// <summary>
-        /// Get the wheel color of the vehicle.
-        /// </summary>
-        /// <returns>Wheel color of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetWheelColorAsync();
-
-        /// <summary>
         /// Set the wheel type of the vehicle.
         /// </summary>
         /// <param name="wheelType">New wheel type of the vehicle</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        void SetWheelType(uint wheelType);
-
-        /// <summary>
-        /// Set the wheel type of the vehicle.
-        /// </summary>
-        /// <param name="wheelType">New wheel type of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetWheelTypeAsync(uint wheelType);
+        void SetWheelType(VehicleWheelType wheelType);
 
         /// <summary>
         /// Get the wheel type of the vehicle.
         /// </summary>
         /// <returns>Wheel type of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        uint GetWheelType();
-
-        /// <summary>
-        /// Get the wheel type of the vehicle.
-        /// </summary>
-        /// <returns>Wheel type of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetWheelTypeAsync();
+        VehicleWheelType GetWheelType();
 
         /// <summary>
         /// Set the number plate type of the vehicle.
         /// </summary>
         /// <param name="type">New number plate type of the vehicle</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        void SetNumberPlateType(uint type);
-
-        /// <summary>
-        /// Set the number plate type of the vehicle.
-        /// </summary>
-        /// <param name="type">New number plate type of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetNumberPlateTypeAsync(uint type);
+        void SetNumberPlateType(VehicleNumberPlateType type);
 
         /// <summary>
         /// Get the number plate type of the vehicle.
         /// </summary>
         /// <returns>Number plate type of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        uint GetNumberPlateType();
-
-        /// <summary>
-        /// Get the number plate type of the vehicle.
-        /// </summary>
-        /// <returns>Number plate type of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetNumberPlateTypeAsync();
+        VehicleNumberPlateType GetNumberPlateType();
 
         /// <summary>
         /// Set the pearlescent color of the vehicle.
@@ -577,13 +298,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetPearlescentColor(uint color);
 
         /// <summary>
-        /// Set the pearlescent color of the vehicle.
-        /// </summary>
-        /// <param name="color">New pearlescent color of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetPearlescentColorAsync(uint color);
-
-        /// <summary>
         /// Get the pearlescent color of the vehicle.
         /// </summary>
         /// <returns>Pearlescent color of the vehicle</returns>
@@ -591,39 +305,18 @@ namespace AlternateLife.RageMP.Net.Interfaces
         uint GetPearlescentColor();
 
         /// <summary>
-        /// Get the pearlescent color of the vehicle.
-        /// </summary>
-        /// <returns>Pearlescent color of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetPearlescentColorAsync();
-
-        /// <summary>
         /// Set the window tint of the vehicle.
         /// </summary>
         /// <param name="tint">New window tint of the vehicle</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        void SetWindowTint(uint tint);
-
-        /// <summary>
-        /// Set the window tint of the vehicle.
-        /// </summary>
-        /// <param name="tint">New window tint of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetWindowTintAsync(uint tint);
+        void SetWindowTint(VehicleWindowTint tint);
 
         /// <summary>
         /// Get the window tint of the vehicle.
         /// </summary>
         /// <returns>Window tint of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        uint GetWindowTint();
-
-        /// <summary>
-        /// Get the window tint of the vehicle.
-        /// </summary>
-        /// <returns>Window tint of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetWindowTintAsync();
+        VehicleWindowTint GetWindowTint();
 
         /// <summary>
         /// Set the dashboard color of the vehicle.
@@ -633,25 +326,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetDashboardColor(uint color);
 
         /// <summary>
-        /// Set the dashboard color of the vehicle.
-        /// </summary>
-        /// <param name="color">Dashboard color of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetDashboardColorAsync(uint color);
-
-        /// <summary>
         /// Get the dashboard color of the vehicle.
         /// </summary>
         /// <returns>Dashboard color of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         uint GetDashboardColor();
-
-        /// <summary>
-        /// Get the dashboard color of the vehicle.
-        /// </summary>
-        /// <returns>Dashboard color of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetDashboardColorAsync();
 
         /// <summary>
         /// Set the trim color of the vehicle.
@@ -661,25 +340,11 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetTrimColor(uint color);
 
         /// <summary>
-        /// Set the trim color of the vehicle.
-        /// </summary>
-        /// <param name="color">New trim color of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetTrimColorAsync(uint color);
-
-        /// <summary>
         /// Get the trim color of the vehicle.
         /// </summary>
         /// <returns>Trim color of the vehicle</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         uint GetTrimColor();
-
-        /// <summary>
-        /// Get the trim color of the vehicle.
-        /// </summary>
-        /// <returns>Trim color of the vehicle</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetTrimColorAsync();
 
         /// <summary>
         /// Explode the vehicle.
@@ -688,22 +353,10 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void Explode();
 
         /// <summary>
-        /// Explode the vehicle.
-        /// </summary>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task ExplodeAsync();
-
-        /// <summary>
         /// Repair the vehicle.
         /// </summary>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void Repair();
-
-        /// <summary>
-        /// Repair the vehicle.
-        /// </summary>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task RepairAsync();
 
         /// <summary>
         /// Spawn the vehicle at given position.
@@ -712,14 +365,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="heading">Heading to spawn the vehicle with</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void Spawn(Vector3 position, float heading);
-
-        /// <summary>
-        /// Spawn the vehicle at given position.
-        /// </summary>
-        /// <param name="position">Position to spawn the vehicle at</param>
-        /// <param name="heading">Heading to spawn the vehicle with</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SpawnAsync(Vector3 position, float heading);
 
         /// <summary>
         /// Get the value of a modification slot.
@@ -735,23 +380,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="id">Slot of the modification</param>
         /// <returns>Value of the modification <paramref name="id" /></returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetModAsync(uint id);
-
-        /// <summary>
-        /// Get the value of a modification slot.
-        /// </summary>
-        /// <param name="id">Slot of the modification</param>
-        /// <returns>Value of the modification <paramref name="id" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         int GetMod(int id);
-
-        /// <summary>
-        /// Get the value of a modification slot.
-        /// </summary>
-        /// <param name="id">Slot of the modification</param>
-        /// <returns>Value of the modification <paramref name="id" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<int> GetModAsync(int id);
 
         /// <summary>
         /// Set the value of a modification slot.
@@ -767,23 +396,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="id">Slot of the modification</param>
         /// <param name="mod">Value of the modification <paramref name="id" /></param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetModAsync(uint id, uint mod);
-
-        /// <summary>
-        /// Set the value of a modification slot.
-        /// </summary>
-        /// <param name="id">Slot of the modification</param>
-        /// <param name="mod">Value of the modification <paramref name="id" /></param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void SetMod(int id, int mod);
-
-        /// <summary>
-        /// Set the value of a modification slot.
-        /// </summary>
-        /// <param name="id">Slot of the modification</param>
-        /// <param name="mod">Value of the modification <paramref name="id" /></param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetModAsync(int id, int mod);
 
         /// <summary>
         /// Get color number of the given color slot.
@@ -799,23 +412,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="id">Slot of the color</param>
         /// <returns>Value of the color <paramref name="id" /></returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetColorAsync(uint id);
-
-        /// <summary>
-        /// Get color number of the given color slot.
-        /// </summary>
-        /// <param name="id">Slot of the color</param>
-        /// <returns>Value of the color <paramref name="id" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         int GetColor(int id);
-
-        /// <summary>
-        /// Get color number of the given color slot.
-        /// </summary>
-        /// <param name="id">Slot of the color</param>
-        /// <returns>Value of the color <paramref name="id" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<int> GetColorAsync(int id);
 
         /// <summary>
         /// Get paint of the given color slot.
@@ -831,23 +428,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="id">Slot of the paint</param>
         /// <returns>Value of the color <paramref name="id" /></returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<uint> GetPaintAsync(uint id);
-
-        /// <summary>
-        /// Get paint of the given color slot.
-        /// </summary>
-        /// <param name="id">Slot of the paint</param>
-        /// <returns>Value of the color <paramref name="id" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         int GetPaint(int id);
-
-        /// <summary>
-        /// Get paint of the given color slot.
-        /// </summary>
-        /// <param name="id">Slot of the paint</param>
-        /// <returns>Value of the color <paramref name="id" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<int> GetPaintAsync(int id);
 
         /// <summary>
         /// Set the color of the vehicle.
@@ -856,14 +437,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="secondaryColor">Secondary rgb color of the vehicle</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void SetColorRgb(Color primaryColor, Color secondaryColor);
-
-        /// <summary>
-        /// Set the color of the vehicle.
-        /// </summary>
-        /// <param name="primaryColor">Primary rgb color of the vehicle</param>
-        /// <param name="secondaryColor">Secondary rgb color of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetColorRgbAsync(Color primaryColor, Color secondaryColor);
 
         /// <summary>
         /// Get the color of the given color slot.
@@ -879,23 +452,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="colorSlot">Slot of the color</param>
         /// <returns><see cref="Color" /> of the vehicle at the given <paramref name="colorSlot" /></returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<Color> GetColorRgbAsync(uint colorSlot);
-
-        /// <summary>
-        /// Get the color of the given color slot.
-        /// </summary>
-        /// <param name="colorSlot">Slot of the color</param>
-        /// <returns><see cref="Color" /> of the vehicle at the given <paramref name="colorSlot" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         Color GetColorRgb(int colorSlot);
-
-        /// <summary>
-        /// Get the color of the given color slot.
-        /// </summary>
-        /// <param name="colorSlot">Slot of the color</param>
-        /// <returns><see cref="Color" /> of the vehicle at the given <paramref name="colorSlot" /></returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<Color> GetColorRgbAsync(int colorSlot);
 
         /// <summary>
         /// Set the primary and secondary color of the vehicle.
@@ -911,23 +468,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="primary">Primary color number of the vehicle</param>
         /// <param name="secondary">Secondary color number of the vehicle</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetColorAsync(uint primary, uint secondary);
-
-        /// <summary>
-        /// Set the primary and secondary color of the vehicle.
-        /// </summary>
-        /// <param name="primary">Primary color number of the vehicle</param>
-        /// <param name="secondary">Secondary color number of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void SetColor(int primary, int secondary);
-
-        /// <summary>
-        /// Set the primary and secondary color of the vehicle.
-        /// </summary>
-        /// <param name="primary">Primary color number of the vehicle</param>
-        /// <param name="secondary">Secondary color number of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetColorAsync(int primary, int secondary);
 
         /// <summary>
         /// Set the primary and secondary paint of the vehicle.
@@ -936,14 +477,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="secondary">Secondary paint of the vehicle</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void SetPaint(PaintData primary, PaintData secondary);
-
-        /// <summary>
-        /// Set the primary and secondary paint of the vehicle.
-        /// </summary>
-        /// <param name="primary">Primary paint of the vehicle</param>
-        /// <param name="secondary">Secondary paint of the vehicle</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetPaintAsync(PaintData primary, PaintData secondary);
 
         /// <summary>
         /// Check if the extra is set on the vehicle.
@@ -959,23 +492,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="id">Slot of the extra</param>
         /// <returns>True if the <paramref name="id" /> is set, otherwise false</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> GetExtraAsync(uint id);
-
-        /// <summary>
-        /// Check if the extra is set on the vehicle.
-        /// </summary>
-        /// <param name="id">Slot of the extra</param>
-        /// <returns>True if the <paramref name="id" /> is set, otherwise false</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         bool GetExtra(int id);
-
-        /// <summary>
-        /// Check if the extra is set on the vehicle.
-        /// </summary>
-        /// <param name="id">Slot of the extra</param>
-        /// <returns>True if the <paramref name="id" /> is set, otherwise false</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> GetExtraAsync(int id);
 
         /// <summary>
         /// Set the extra on the vehicle.
@@ -991,23 +508,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="id">Slot of the extra</param>
         /// <param name="state">State of the extra</param>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetExtraAsync(uint id, bool state);
-
-        /// <summary>
-        /// Set the extra on the vehicle.
-        /// </summary>
-        /// <param name="id">Slot of the extra</param>
-        /// <param name="state">State of the extra</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         void SetExtra(int id, bool state);
-
-        /// <summary>
-        /// Set the extra on the vehicle.
-        /// </summary>
-        /// <param name="id">Slot of the extra</param>
-        /// <param name="state">State of the extra</param>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetExtraAsync(int id, bool state);
 
         /// <summary>
         /// Get all occupants in the vehicle.
@@ -1016,26 +517,12 @@ namespace AlternateLife.RageMP.Net.Interfaces
         IReadOnlyCollection<IPlayer> GetOccupants();
 
         /// <summary>
-        /// Get all occupants in the vehicle.
-        /// </summary>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<IReadOnlyCollection<IPlayer>> GetOccupantsAsync();
-
-        /// <summary>
         /// Get player on given seat in the vehicle.
         /// </summary>
         /// <param name="seat">Seat of the vehicle</param>
         /// <returns><see cref="IPlayer" /> on the <paramref name="seat" /> or null if the <paramref name="seat" /> is empty</returns>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         IPlayer GetOccupant(int seat);
-
-        /// <summary>
-        /// Get player on given seat in the vehicle.
-        /// </summary>
-        /// <param name="seat">Seat of the vehicle</param>
-        /// <returns><see cref="IPlayer" /> on the <paramref name="seat" /> or null if the <paramref name="seat" /> is empty</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<IPlayer> GetOccupantAsync(int seat);
 
         /// <summary>
         /// Set player on given seat in the vehicle.
@@ -1047,15 +534,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         void SetOccupant(int seat, IPlayer player);
 
         /// <summary>
-        /// Set player on given seat in the vehicle.
-        /// </summary>
-        /// <param name="seat">Seat of the vehicle</param>
-        /// <param name="player">Player to place on the seat</param>
-        /// <exception cref="ArgumentNullException"><paramref name="player" /> is null</exception>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task SetOccupantAsync(int seat, IPlayer player);
-
-        /// <summary>
         /// Check if the vehicle is streamed for given player.
         /// </summary>
         /// <param name="forPlayer">Player to check for</param>
@@ -1064,23 +542,9 @@ namespace AlternateLife.RageMP.Net.Interfaces
         bool IsStreamed(IPlayer forPlayer);
 
         /// <summary>
-        /// Check if the vehicle is streamed for given player.
-        /// </summary>
-        /// <param name="forPlayer">Player to check for</param>
-        /// <returns>True if the vehicle is streamed for given <paramref name="forPlayer" />, otherwise false</returns>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<bool> IsStreamedAsync(IPlayer forPlayer);
-
-        /// <summary>
         /// Get all streamed players for the vehicle.
         /// </summary>
         /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
         IReadOnlyCollection<IPlayer> GetStreamedPlayers();
-
-        /// <summary>
-        /// Get all streamed players for the vehicle.
-        /// </summary>
-        /// <exception cref="EntityDeletedException">This entity was deleted before</exception>
-        Task<IReadOnlyCollection<IPlayer>> GetStreamedPlayersAsync();
     }
 }

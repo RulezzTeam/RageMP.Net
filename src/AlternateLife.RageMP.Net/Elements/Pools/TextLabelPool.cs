@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Numerics;
 using System.Threading.Tasks;
 using AlternateLife.RageMP.Net.Elements.Entities;
+using AlternateLife.RageMP.Net.Enums;
 using AlternateLife.RageMP.Net.Extensions;
 using AlternateLife.RageMP.Net.Helpers;
 using AlternateLife.RageMP.Net.Interfaces;
@@ -16,7 +17,7 @@ namespace AlternateLife.RageMP.Net.Elements.Pools
         {
         }
 
-        public ITextLabel New(Vector3 position, string text, uint font, Color color, float drawDistance, bool los, uint dimension)
+        public ITextLabel New(Vector3 position, string text, TextFontStyle font, Color color, float drawDistance, bool los, uint dimension)
         {
             Contract.NotNull(text, nameof(text));
 
@@ -24,16 +25,12 @@ namespace AlternateLife.RageMP.Net.Elements.Pools
             {
                 var textPointer = converter.StringToPointer(text);
 
-                var pointer = Rage.TextLabelPool.TextLabelPool_New(_nativePointer, position, textPointer, font, color.GetNumberValue(), drawDistance, los, dimension);
+                var pointer = Rage.TextLabelPool.TextLabelPool_New(_nativePointer, position, textPointer, (uint)font, color.GetNumberValue(), drawDistance, los, dimension);
 
                 return CreateAndSaveEntity(pointer);
             }
         }
 
-        public ITextLabel New(Vector3 position, string text, int font, Color color, float drawDistance, bool los, uint dimension)
-        {
-            return New(position, text, (uint) font, color, drawDistance, los, dimension);
-        }
 
 
         protected override ITextLabel BuildEntity(IntPtr entityPointer)

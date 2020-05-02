@@ -30,7 +30,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="range">Range to search players in</param>
         /// <param name="dimension">Dimension to search players in</param>
         /// <exception cref="ArgumentNullException"><paramref name="message" /> is null (empty message is allowed)</exception>
-        void Broadcast(string message, Vector3 position, float range, uint dimension = MP.GlobalDimension);
+        void Broadcast(string message, Vector3 position, float range, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Send chat message to all players at given position.
@@ -40,7 +40,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="range">Range to search players in</param>
         /// <param name="dimension">Dimension to search players in</param>
         /// <exception cref="ArgumentNullException"><paramref name="message" /> is null (empty message is allowed)</exception>
-        Task BroadcastAsync(string message, Vector3 position, float range, uint dimension = MP.GlobalDimension);
+        Task BroadcastAsync(string message, Vector3 position, float range, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Send chat message to all players in given dimension.

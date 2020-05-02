@@ -12,7 +12,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 {
     internal class TextLabel : Entity, ITextLabel
     {
-
         internal TextLabel(IntPtr nativePointer, Plugin plugin) : base(nativePointer, plugin, EntityType.TextLabel)
         {
         }
@@ -24,21 +23,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.TextLabel.TextLabel_SetColor(NativePointer, value.GetNumberValue());
         }
 
-        public Task SetColorAsync(Color value)
-        {
-            return _plugin.Schedule(() => SetColor(value));
-        }
-
         public Color GetColor()
         {
             CheckExistence();
 
             return StructConverter.PointerToStruct<ColorRgba>(Rage.TextLabel.TextLabel_GetColor(NativePointer)).FromModColor();
-        }
-
-        public Task<Color> GetColorAsync()
-        {
-            return _plugin.Schedule(GetColor);
         }
 
         public void SetText(string value)
@@ -53,21 +42,12 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             }
         }
 
-        public Task SetTextAsync(string value)
-        {
-            return _plugin.Schedule(() => SetText(value));
-        }
 
         public string GetText()
         {
             CheckExistence();
 
             return StringConverter.PointerToString(Rage.TextLabel.TextLabel_GetText(NativePointer));
-        }
-
-        public Task<string> GetTextAsync()
-        {
-            return _plugin.Schedule(GetText);
         }
 
         public void SetLOS(bool value)
@@ -77,21 +57,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.TextLabel.TextLabel_SetLOS(NativePointer, value);
         }
 
-        public Task SetLOSAsync(bool value)
-        {
-            return _plugin.Schedule(() => SetLOS(value));
-        }
-
         public bool GetLOS()
         {
             CheckExistence();
 
             return Rage.TextLabel.TextLabel_GetLOS(NativePointer);
-        }
-
-        public Task<bool> GetLOSAsync()
-        {
-            return _plugin.Schedule(GetLOS);
         }
 
         public void SetDrawDistance(float value)
@@ -101,11 +71,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             Rage.TextLabel.TextLabel_SetDrawDistance(NativePointer, value);
         }
 
-        public Task SetDrawDistanceAsync(float value)
-        {
-            return _plugin.Schedule(() => SetDrawDistance(value));
-        }
-
         public float GetDrawDistance()
         {
             CheckExistence();
@@ -113,35 +78,20 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return Rage.TextLabel.TextLabel_GetDrawDistance(NativePointer);
         }
 
-        public Task<float> GetDrawDistanceAsync()
-        {
-            return _plugin
-                .Schedule(GetDrawDistance);
-        }
 
-        public void SetFont(uint value)
+        public void SetFont(TextFontStyle value)
         {
             CheckExistence();
 
-            Rage.TextLabel.TextLabel_SetFont(NativePointer, value);
+            Rage.TextLabel.TextLabel_SetFont(NativePointer, (uint) value);
         }
 
-        public Task SetFontAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetFont(value));
-        }
 
-        public uint GetFont()
+        public TextFontStyle GetFont()
         {
             CheckExistence();
 
-            return Rage.TextLabel.TextLabel_GetFont(NativePointer);
+            return (TextFontStyle) Rage.TextLabel.TextLabel_GetFont(NativePointer);
         }
-
-        public Task<uint> GetFontAsync()
-        {
-            return _plugin.Schedule(GetFont);
-        }
-
     }
 }

@@ -14,7 +14,7 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 {
     internal abstract class Entity : IInternalEntity, IEntity
     {
-        private readonly ConcurrentDictionary<string, object> _data = new ConcurrentDictionary<string, object>();
+        private readonly ConcurrentDictionary<string, object> _data = new ConcurrentDictionary<string, object>(Environment.ProcessorCount * 2, 256);
 
         protected readonly Plugin _plugin;
 

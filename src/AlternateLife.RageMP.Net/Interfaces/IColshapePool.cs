@@ -13,7 +13,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="radius">Radius of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        IColshape NewCircle(Vector2 position, float radius, uint dimension = MP.GlobalDimension);
+        IColshape NewCircle(Vector2 position, float radius, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new circle colshape.
@@ -22,7 +22,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="radius">Radius of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        Task<IColshape> NewCircleAsync(Vector2 position, float radius, uint dimension = MP.GlobalDimension);
+        Task<IColshape> NewCircleAsync(Vector2 position, float radius, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new sphere colshape.
@@ -31,7 +31,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="radius">Radius of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        IColshape NewSphere(Vector3 position, float radius, uint dimension = MP.GlobalDimension);
+        IColshape NewSphere(Vector3 position, float radius, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new sphere colshape.
@@ -40,7 +40,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="radius">Radius of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        Task<IColshape> NewSphereAsync(Vector3 position, float radius, uint dimension = MP.GlobalDimension);
+        Task<IColshape> NewSphereAsync(Vector3 position, float radius, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new tube colshape.
@@ -50,7 +50,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="height">Height of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        IColshape NewTube(Vector3 position, float radius, float height, uint dimension = MP.GlobalDimension);
+        IColshape NewTube(Vector3 position, float radius, float height, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new tube colshape.
@@ -60,7 +60,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="height">Height of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        Task<IColshape> NewTubeAsync(Vector3 position, float radius, float height, uint dimension = MP.GlobalDimension);
+        Task<IColshape> NewTubeAsync(Vector3 position, float radius, float height, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new rectangle colshape.
@@ -69,7 +69,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="size">Size of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        IColshape NewRectangle(Vector2 position, Vector2 size, uint dimension = MP.GlobalDimension);
+        IColshape NewRectangle(Vector2 position, Vector2 size, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new rectangle colshape.
@@ -78,7 +78,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="size">Size of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        Task<IColshape> NewRectangleAsync(Vector2 position, Vector2 size, uint dimension = MP.GlobalDimension);
+        Task<IColshape> NewRectangleAsync(Vector2 position, Vector2 size, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new cube colshape.
@@ -87,7 +87,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="size">Size of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        IColshape NewCube(Vector3 position, Vector3 size, uint dimension = MP.GlobalDimension);
+        IColshape NewCube(Vector3 position, Vector3 size, uint dimension = RageMpConsts.GlobalDimension);
 
         /// <summary>
         /// Create a new cube colshape.
@@ -96,6 +96,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="size">Size of the colshape</param>
         /// <param name="dimension">Dimension of the colshape</param>
         /// <returns>New <see cref="IColshape" /> instance</returns>
-        Task<IColshape> NewCubeAsync(Vector3 position, Vector3 size, uint dimension = MP.GlobalDimension);
+        Task<IColshape> NewCubeAsync(Vector3 position, Vector3 size, uint dimension = RageMpConsts.GlobalDimension);
     }
 }

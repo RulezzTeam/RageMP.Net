@@ -14,7 +14,7 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="rotation">Rotation of the object</param>
         /// <param name="dimension">Dimension of the object</param>
         /// <returns>New <see cref="IObject" /> instance</returns>
-        IObject New(uint model, Vector3 position, Vector3 rotation, uint dimension = MP.GlobalDimension);
+        IObject New(uint model, Vector3 position, Vector3 rotation, uint dimension = RageMpConsts.GlobalDimension);
         
         /// <summary>
         /// Create a new object.
@@ -24,6 +24,6 @@ namespace AlternateLife.RageMP.Net.Interfaces
         /// <param name="rotation">Rotation of the object</param>
         /// <param name="dimension">Dimension of the object</param>
         /// <returns>New <see cref="IObject" /> instance</returns>
-        IObject New(int model, Vector3 position, Vector3 rotation, uint dimension = MP.GlobalDimension);
+        IObject New(int model, Vector3 position, Vector3 rotation, uint dimension = RageMpConsts.GlobalDimension);
     }
 }

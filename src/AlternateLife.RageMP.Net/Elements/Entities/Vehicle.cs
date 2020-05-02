@@ -454,53 +454,35 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return _plugin.Schedule(GetWheelColor);
         }
 
-        public void SetWheelType(uint value)
+        public void SetWheelType(VehicleWheelType value)
         {
             CheckExistence();
 
-            Rage.Vehicle.Vehicle_SetWheelType(NativePointer, value);
+            Rage.Vehicle.Vehicle_SetWheelType(NativePointer, (uint) value);
         }
 
-        public Task SetWheelTypeAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetWheelType(value));
-        }
 
-        public uint GetWheelType()
+        public VehicleWheelType GetWheelType()
         {
             CheckExistence();
 
-            return Rage.Vehicle.Vehicle_GetWheelType(NativePointer);
+            return (VehicleWheelType) Rage.Vehicle.Vehicle_GetWheelType(NativePointer);
         }
 
-        public Task<uint> GetWheelTypeAsync()
-        {
-            return _plugin.Schedule(GetWheelType);
-        }
-
-        public void SetNumberPlateType(uint value)
+        public void SetNumberPlateType(VehicleNumberPlateType value)
         {
             CheckExistence();
 
-            Rage.Vehicle.Vehicle_SetNumberPlateType(NativePointer, value);
+            Rage.Vehicle.Vehicle_SetNumberPlateType(NativePointer, (uint) value);
         }
 
-        public Task SetNumberPlateTypeAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetNumberPlateType(value));
-        }
-
-        public uint GetNumberPlateType()
+        public VehicleNumberPlateType GetNumberPlateType()
         {
             CheckExistence();
 
-            return Rage.Vehicle.Vehicle_GetNumberPlateType(NativePointer);
+            return (VehicleNumberPlateType) Rage.Vehicle.Vehicle_GetNumberPlateType(NativePointer);
         }
 
-        public Task<uint> GetNumberPlateTypeAsync()
-        {
-            return _plugin.Schedule(GetNumberPlateType);
-        }
 
         public void SetPearlescentColor(uint value)
         {
@@ -526,29 +508,20 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return _plugin.Schedule(GetPearlescentColor);
         }
 
-        public void SetWindowTint(uint value)
+        public void SetWindowTint(VehicleWindowTint value)
         {
             CheckExistence();
 
-            Rage.Vehicle.Vehicle_SetWindowTint(NativePointer, value);
+            Rage.Vehicle.Vehicle_SetWindowTint(NativePointer, (uint) value);
         }
 
-        public Task SetWindowTintAsync(uint value)
-        {
-            return _plugin.Schedule(() => SetWindowTint(value));
-        }
-
-        public uint GetWindowTint()
+        public VehicleWindowTint GetWindowTint()
         {
             CheckExistence();
 
-            return Rage.Vehicle.Vehicle_GetWindowTint(NativePointer);
+            return (VehicleWindowTint) Rage.Vehicle.Vehicle_GetWindowTint(NativePointer);
         }
 
-        public Task<uint> GetWindowTintAsync()
-        {
-            return _plugin.Schedule(GetWindowTint);
-        }
 
         public void SetDashboardColor(uint value)
         {
