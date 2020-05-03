@@ -16,6 +16,7 @@
         <PackageTags>ragemp gta bridge</PackageTags>
         <LangVersion>8</LangVersion>
         <OutputType>Exe</OutputType>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Testing' ">

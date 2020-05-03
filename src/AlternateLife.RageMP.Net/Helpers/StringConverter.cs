@@ -35,23 +35,40 @@ namespace AlternateLife.RageMP.Net.Helpers
             return Encoding.UTF8.GetString(buffer);
         }
 
-        public static IntPtr StringToPointerUnsafe(string text)
+        public static IntPtr StringToPointerUnsafe(string s)
         {
-            if (text == null)
+            unsafe
             {
-                return IntPtr.Zero;
+                if (s == null)
+                {
+                    return IntPtr.Zero;
+                }
+
+                int nb = Encoding.UTF8.GetMaxByteCount(s.Length);
+
+                IntPtr pMem = Marshal.AllocHGlobal(nb + 1);
+
+                int nbWritten;
+                byte* pbMem = (byte*)pMem;
+
+                fixed (char* firstChar = s)
+                {
+                    nbWritten = Encoding.UTF8.GetBytes(firstChar, s.Length, pbMem, nb);
+                }
+
+                pbMem[nbWritten] = 0;
+            
+                //var bufferSize = Encoding.UTF8.GetByteCount(text) + 1;
+//
+                //var buffer = new byte[bufferSize];
+                //Encoding.UTF8.GetBytes(text, 0, text.Length, buffer, 0);
+//
+                //var pointer = Marshal.AllocHGlobal(bufferSize);
+//
+                //Marshal.Copy(buffer, 0, pointer, bufferSize);
+    
+                return pMem;
             }
-
-            var bufferSize = Encoding.UTF8.GetByteCount(text) + 1;
-
-            var buffer = new byte[bufferSize];
-            Encoding.UTF8.GetBytes(text, 0, text.Length, buffer, 0);
-
-            var pointer = Marshal.AllocHGlobal(bufferSize);
-
-            Marshal.Copy(buffer, 0, pointer, bufferSize);
-
-            return pointer;
         }
 
         public IntPtr StringToPointer(string text)

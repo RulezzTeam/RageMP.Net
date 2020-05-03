@@ -9,12 +9,13 @@ using AlternateLife.RageMP.Net.Exceptions;
 using AlternateLife.RageMP.Net.Helpers;
 using AlternateLife.RageMP.Net.Interfaces;
 using AlternateLife.RageMP.Net.Native;
+using AlternateLife.RageMP.Net.Scripting;
 
 namespace AlternateLife.RageMP.Net.Elements.Entities
 {
     internal abstract class Entity : IInternalEntity, IEntity
     {
-        private readonly ConcurrentDictionary<string, object> _data = new ConcurrentDictionary<string, object>(Environment.ProcessorCount * 2, 256);
+        private readonly ConcurrentDictionary<string, object> _data = new ConcurrentDictionary<string, object>(RageMpConsts.ConcurrencyLevel, 256);
 
         protected readonly Plugin _plugin;
 

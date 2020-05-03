@@ -62,12 +62,7 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 
             return Rage.Player.Player_GetHeading(NativePointer);
         }
-
-        public Task<float> GetHeadingAsync()
-        {
-            return _plugin.Schedule(GetHeading);
-        }
-
+        
         public override void SetRotation(Vector3 value)
         {
             SetHeading(value.Z);
@@ -187,14 +182,14 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 
             return Rage.Player.Player_IsEnteringVehicle(NativePointer);
         }
-
-
+        
         public bool IsLeavingVehicle()
         {
             CheckExistence();
 
             return Rage.Player.Player_IsLeavingVehicle(NativePointer);
         }
+        
         public bool IsClimbing()
         {
             CheckExistence();
@@ -202,21 +197,12 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return Rage.Player.Player_IsClimbing(NativePointer);
         }
 
-        public Task<bool> IsClimbingAsync()
-        {
-            return _plugin.Schedule(IsClimbing);
-        }
 
         public bool IsOnLadder()
         {
             CheckExistence();
 
             return Rage.Player.Player_IsOnLadder(NativePointer);
-        }
-
-        public Task<bool> IsOnLadderAsync()
-        {
-            return _plugin.Schedule(IsOnLadder);
         }
 
         public bool IsReloading()
@@ -226,21 +212,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return Rage.Player.Player_IsReloading(NativePointer);
         }
 
-        public Task<bool> IsReloadingAsync()
-        {
-            return _plugin.Schedule(IsReloading);
-        }
-
         public bool IsInMelee()
         {
             CheckExistence();
 
             return Rage.Player.Player_IsInMelee(NativePointer);
-        }
-
-        public Task<bool> IsInMeleeAsync()
-        {
-            return _plugin.Schedule(IsInMelee);
         }
 
         public bool IsAiming()
@@ -250,11 +226,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             return Rage.Player.Player_IsAiming(NativePointer);
         }
 
-        public Task<bool> IsAimingAsync()
-        {
-            return _plugin.Schedule(IsAiming);
-        }
-
         public string GetActionString()
         {
             CheckExistence();
@@ -262,11 +233,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             var actionStringPointer = Rage.Player.Player_GetActionString(NativePointer);
 
             return StringConverter.PointerToString(actionStringPointer);
-        }
-
-        public Task<string> GetActionStringAsync()
-        {
-            return _plugin.Schedule(GetActionString);
         }
 
         public void Kick(string reason = null)
@@ -280,10 +246,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             }
         }
 
-        public Task KickAsync(string reason = null)
-        {
-            return _plugin.Schedule(() => Kick(reason));
-        }
 
         public void Ban(string reason = null)
         {
@@ -294,11 +256,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
                 var reasonPointer = converter.StringToPointer(reason);
                 Rage.Player.Player_Ban(NativePointer, reasonPointer);
             }
-        }
-
-        public Task BanAsync(string reason = null)
-        {
-            return _plugin.Schedule(() => Ban(reason));
         }
 
         public void OutputChatBox(string text)
@@ -332,12 +289,7 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
         {
             Call(eventName, (IEnumerable<object>) arguments);
         }
-
-        public Task CallAsync(string eventName, params object[] arguments)
-        {
-            return CallAsync(eventName, (IEnumerable<object>) arguments);
-        }
-
+        
         public void Call(string eventName, IEnumerable<object> arguments)
         {
             Contract.NotEmpty(eventName, nameof(eventName));
@@ -356,19 +308,10 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             ArgumentData.Dispose(data);
         }
 
-        public Task CallAsync(string eventName, IEnumerable<object> arguments)
-        {
-            return _plugin.Schedule(() => Call(eventName, arguments));
-        }
 
         public void CallHash(ulong eventHash, params object[] arguments)
         {
             CallHash(eventHash, (IEnumerable<object>) arguments);
-        }
-
-        public Task CallHashAsync(ulong eventHash, params object[] arguments)
-        {
-            return CallHashAsync(eventHash, (IEnumerable<object>) arguments);
         }
 
         public void CallHash(ulong eventHash, IEnumerable<object> arguments)
@@ -383,19 +326,9 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             ArgumentData.Dispose(data);
         }
 
-        public Task CallHashAsync(ulong eventHash, IEnumerable<object> arguments)
-        {
-            return _plugin.Schedule(() => CallHash(eventHash, arguments));
-        }
-
         public void Invoke(ulong nativeHash, params object[] arguments)
         {
             Invoke(nativeHash, (IEnumerable<object>) arguments);
-        }
-
-        public Task InvokeAsync(ulong nativeHash, params object[] arguments)
-        {
-            return InvokeAsync(nativeHash, (IEnumerable<object>) arguments);
         }
 
         public void Invoke(ulong nativeHash, IEnumerable<object> arguments)
@@ -410,21 +343,11 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
             ArgumentData.Dispose(data);
         }
 
-        public Task InvokeAsync(ulong nativeHash, IEnumerable<object> arguments)
-        {
-            return _plugin.Schedule(() => Invoke(nativeHash, arguments));
-        }
-
         public void Spawn(Vector3 position, float heading)
         {
             CheckExistence();
 
             Rage.Player.Player_Spawn(NativePointer, position, heading);
-        }
-
-        public Task SpawnAsync(Vector3 position, float heading)
-        {
-            return _plugin.Schedule(() => Spawn(position, heading));
         }
 
         public void PlayAnimation(string dictionary, string name, float speed = 8, AnimationFlags flags = (AnimationFlags) 0)
@@ -440,11 +363,6 @@ namespace AlternateLife.RageMP.Net.Elements.Entities
 
                 Rage.Player.Player_PlayAnimation(NativePointer, dictionaryPointer, namePointer, speed, (int) flags);
             }
-        }
-
-        public Task PlayAnimationAsync(string dictionary, string name, float speed = 8, AnimationFlags flags = (AnimationFlags) 0)
-        {
-            return _plugin.Schedule(() => PlayAnimation(dictionary, name, speed, flags));
         }
 
         public void StopAnimation()
